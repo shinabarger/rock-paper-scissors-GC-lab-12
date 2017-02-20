@@ -34,11 +34,11 @@ public class Validator {
         while (isValid == false) {
             System.out.println(prompt);
             s = sc.next();// read user entry
-            if (s.equalsIgnoreCase("Easy") || s.equalsIgnoreCase("Hard")) {
+            if (s.equalsIgnoreCase("Easy") || s.equalsIgnoreCase("Hard")|| s.equalsIgnoreCase("Human")) {
                 break;
 
             } else {
-                System.out.println("Oh no! That wasn't hard or easy.");
+                System.out.println("Oh no! That wasn't right. Try again..");
 
             }
             sc.nextLine();  // discard any other data entered on the line

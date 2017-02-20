@@ -12,8 +12,7 @@ public class RandomPlayer extends Player {
     @Override
     public String generateRoshambo() {
         Random rando = new Random();
-        int rockPlayerSelection = rando.nextInt(3) + 1;
-        String randomGeneration = String.valueOf(rockPlayerSelection);
+        int randomGeneration = rando.nextInt(3) + 1;
         return String.valueOf(randomGeneration);
     }
 }

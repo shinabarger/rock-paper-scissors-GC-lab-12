@@ -8,11 +8,13 @@ public class Main {
         UserPlayer userPlayer = new UserPlayer();
         RockPlayer rockPlayer = new RockPlayer();
         RandomPlayer randomPlayer = new RandomPlayer();
+        UserPlayer2 userPlayer2 = new UserPlayer2();
 
         String answer = "";
         int answerNum = 0;
         String userChoice;
         int userChoiceNum = 0;
+        String userPlay = "";
         boolean cont = true;
         String userContinue;
 
@@ -20,35 +22,25 @@ public class Main {
 
         while (cont == true) {
 
-
-            String getOpponentChoice = Validator.getEasyOrHard(scan, "Pick HARD to play hard player. \nPick EASY for easy player.");
+            String getOpponentChoice = Validator.getEasyOrHard(scan, "Pick HARD to play computer. \nPick EASY for easy computer."  ); //add human option
             System.out.println("Great. You picked the " + getOpponentChoice + " player.");
 
             userChoice = userPlayer.generateRoshambo();
 
-            if (userChoice.equalsIgnoreCase("Rock")) {
-                userChoiceNum = 1;
-            } else if (userChoice.equalsIgnoreCase("Paper")) {
-                userChoiceNum = 2;
-            } else if (userChoice.equalsIgnoreCase("Scissors")) {
-                userChoiceNum = 3;
-            }
-
             if (getOpponentChoice.equalsIgnoreCase("easy")) {
                 answer = String.valueOf(rockPlayer.generateRoshambo());
-                answerNum = 1;
+
 
             } else if (getOpponentChoice.equalsIgnoreCase("hard")) {
-                answer = randomPlayer.generateRoshambo();
+                answer = String.valueOf(randomPlayer.generateRoshambo());
                 if (answer.equalsIgnoreCase("1")) {
                     answer = "scissors";
-                    answerNum = 1;
+
                 } else if (answer.equalsIgnoreCase("2")) {
                     answer = "rock";
-                    answerNum = 2;
+
                 } else if (answer.equalsIgnoreCase("3")) {
                     answer = "paper";
-                    answerNum =3;
                 }
             }
 
